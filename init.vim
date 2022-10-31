@@ -9,6 +9,8 @@ set noswapfile
 set incsearch
 set scrolloff=8
 call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
 set background=dark
