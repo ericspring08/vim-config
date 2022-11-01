@@ -26,6 +26,7 @@ Plug 'ervandew/supertab'
 Plug 'neovim/nvim-lspconfig'
 Plug 'github/copilot.vim'
 Plug 'f-person/git-blame.nvim'
+Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 set background=dark
 colorscheme codedark
