@@ -9,6 +9,10 @@ set scrolloff=8
 set nowrap
 set termguicolors
 set signcolumn=yes
+set smartindent
+set tabstop=2
+set expandtab
+set shiftwidth=2
 call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
@@ -30,6 +34,9 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'glepnir/dashboard-nvim'
+Plug 'tpope/vim-commentary'
 call plug#end()
 colorscheme nightfox 
 let mapleader = " "
@@ -62,6 +69,39 @@ nmap <leader>rn <Plug>(coc-rename)
 imap <silent><script><expr> <C-Tab> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
+nnoremap <leader>n :NvimTreeFocus<CR>
+nnoremap <C-n> :NvimTree<CR>
+nnoremap <C-t> :NvimTreeToggle<CR>
+nnoremap <C-f> :NvimTreeFind<CR>
+
+nnoremap <C-s> :w<CR>
+
 lua << EOF
 require("nvim-tree").setup()
+  local home = os.getenv('HOME')
+  local db = require('dashboard')
+  -- macos
+  -- linux
+  --
+  db.custom_center = 'default'
+  db.preview_file_height = 11
+  db.preview_file_width = 70
+  db.custom_center = {
+      {icon = '  ',
+      desc = 'Recently latest session                  ',
+      shortcut = 'SPC s l',
+      action ='SessionLoad'},
+      {icon = '  ',
+      desc = 'Recently opened files                   ',
+      action =  'DashboardFindHistory',
+      shortcut = 'SPC f h'},
+      {icon = '  ',
+      desc = 'Find  File                              ',
+      action = 'Telescope find_files',
+      shortcut = 'SPC f f'},
+      {icon = '  ',
+      desc ='File Browser                            ',
+      action =  'NvimTreeToggle',
+      shortcut = 'SPC f b'},
+    }
 EOF
