@@ -16,7 +16,8 @@ set shiftwidth=2
 call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-Plug 'EdenEast/nightfox.nvim'
+Plug 'arzg/vim-colors-xcode'
+Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'pangloss/vim-javascript'
@@ -38,9 +39,8 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'glepnir/dashboard-nvim'
 Plug 'tpope/vim-commentary'
 call plug#end()
-colorscheme nightfox 
 let mapleader = " "
-
+colorscheme xcodedarkhc
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -74,8 +74,11 @@ nnoremap <C-n> :NvimTree<CR>
 nnoremap <C-t> :NvimTreeToggle<CR>
 nnoremap <C-f> :NvimTreeFind<CR>
 
-nnoremap <C-s> :w<CR>
-
+nnoremap <s> :w<CR>
+nnoremap <Left> <C-W>h
+nnoremap <Down> <C-W>j
+nnoremap <Up> <C-W>k
+nnoremap <Right> <C-W>l
 lua << EOF
 require("nvim-tree").setup()
   local home = os.getenv('HOME')
