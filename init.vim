@@ -119,19 +119,19 @@ require("nvim-tree").setup()
   db.preview_file_height = 11
   db.preview_file_width = 70
   db.custom_center = {
-      {icon = '  ',
+      {icon = '📅  ',
       desc = 'Recently latest session                  ',
       shortcut = 'SPC s l',
-      action ='SessionLoad'},
-      {icon = '  ',
+      action ='lua require("harpoon").load_session()'},
+      {icon = '🗄️ ',
       desc = 'Recently opened files                   ',
       action =  'DashboardFindHistory',
       shortcut = 'SPC f h'},
-      {icon = '  ',
+      {icon = '🔍 ',
       desc = 'Find  File                              ',
       action = 'Telescope find_files',
       shortcut = 'SPC f f'},
-      {icon = '  ',
+      {icon = '📁 ',
       desc ='File Browser                            ',
       action =  'NvimTreeToggle',
       shortcut = 'SPC f b'},
@@ -139,3 +139,6 @@ require("nvim-tree").setup()
 EOF
 nnoremap <C-m> :lua require("harpoon.mark").add_file() <CR>
 nnoremap <C-p> :lua require("harpoon.ui").toggle_quick_menu() <CR>
+
+au VimLeave * :lua require("harpoon").save_session()
+au VimLeave * :
