@@ -48,7 +48,7 @@ colorscheme tokyonight
 hi normal guibg=NONE ctermbg=NONE
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fg :lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
