@@ -11,6 +11,7 @@ set nowrap
 set termguicolors
 set signcolumn=yes
 set smartindent
+set autoindent
 set tabstop=2
 set expandtab
 set shiftwidth=2
