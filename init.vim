@@ -42,6 +42,7 @@ Plug 'tpope/vim-commentary'
 Plug 'ryanoasis/vim-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'townk/vim-autoclose'
 call plug#end()
 let mapleader = " "
 colorscheme tokyonight
