@@ -48,6 +48,8 @@ Plug 'townk/vim-autoclose'
 Plug 'utilyre/barbecue.nvim'
 Plug 'smiteshp/nvim-navic' 
 Plug 'edluffy/hologram.nvim'
+Plug 'alec-gibson/nvim-tetris'
+Plug 'karb94/neoscroll.nvim'
 call plug#end()
 let mapleader = " "
 colorscheme tokyonight
