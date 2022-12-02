@@ -46,6 +46,8 @@ Plug 'romgrk/barbar.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'townk/vim-autoclose'
 Plug 'utilyre/barbecue.nvim'
+Plug 'smiteshp/nvim-navic' 
+Plug 'edluffy/hologram.nvim'
 call plug#end()
 let mapleader = " "
 colorscheme tokyonight
